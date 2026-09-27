@@ -1,0 +1,10 @@
+.site-header {
+  position: relative;
+  z-index: 30;
+}
+.site-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

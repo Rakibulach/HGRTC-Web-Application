@@ -1,0 +1,70 @@
+.consult-bar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.consult-btn {
+  flex: none;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.consult-btn:hover {
+  background: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+.consult-text {
+  flex: 1;
+  color: var(--color-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.consult-contact {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.consult-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.consult-contact-text {
+  display: flex;
+  flex-direction: column;
+}
+.consult-label {
+  font-size: 12.5px;
+  color: var(--color-muted);
+}
+.consult-phone {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+@media (max-width: 860px) {
+  .consult-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}

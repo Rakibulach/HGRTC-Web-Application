@@ -1,0 +1,95 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+/* ---- background image layer ---- */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+}
+
+/* Image 1: zoom IN, visible 0-6s */
+.hero-bg-image:nth-child(1) {
+  background-image: url('../images/bg-1.png');
+  animation: heroFade 18s infinite, zoomIn 18s infinite ease-in-out;
+}
+.hero-bg-image:nth-child(2) {
+  background-image: url('../images/bg-2.jpg');
+  animation: heroFade 18s infinite 6s, zoomOut 18s infinite ease-in-out 6s;
+}
+.hero-bg-image:nth-child(3) {
+  background-image: url('../images/bg-3.jpg');
+  animation: heroFade 18s infinite 12s, zoomIn 18s infinite ease-in-out 12s;
+}
+
+@keyframes heroFade {
+  0%, 100% { opacity: 0; }
+  5%, 28%  { opacity: 1; }
+  33%      { opacity: 0; }
+}
+@keyframes zoomIn {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+@keyframes zoomOut {
+  0%   { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ---- dark overlay so text stays readable ---- */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 42, 71, 0.6); /* Helix Navy, 60% — image o dekha jabe, text o clear thakbe */
+  z-index: 1;
+}
+
+/* ---- text layer ---- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  text-align: center;
+  padding: 80px 0;
+}
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 16px;
+}
+.hero-content p {
+  color: rgba(255,255,255,0.85);
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}

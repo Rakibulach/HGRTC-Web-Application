@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap');
+:root {
+  --color-primary: #0E2A47;   /* Helix Navy */
+  --color-secondary: #12897F; /* Genome Teal */
+  --color-bg: #F6F8F7;
+  --color-text: #14232F;
+  --color-muted: #5B7184;
+  --color-border: #DCE6E2;
+  --color-accent: #B87A24; /* Amber Flag */
+  --font-display: 'Newsreader', serif;
+  --font-ui: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+}

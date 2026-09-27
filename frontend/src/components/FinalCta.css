@@ -1,0 +1,16 @@
+.final-cta {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 72px 24px;
+}
+.final-cta h2 { font-family: var(--font-display); font-size: 30px; margin-bottom: 12px; }
+.final-cta p { color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; }
+.btn-secondary-inverse {
+  background: transparent; color: white; border: 1px solid white;
+  padding: 8px 16px; border-radius: 4px; font-weight: 600; cursor: pointer;
+}
+@media (max-width: 768px) {
+  .cta-actions { flex-direction: column; }
+}

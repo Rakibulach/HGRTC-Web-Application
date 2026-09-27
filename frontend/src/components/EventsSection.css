@@ -1,0 +1,7 @@
+.events { max-width: 1180px; margin: 0 auto; padding: 64px 24px; }
+.events h2 { font-family: var(--font-display); font-size: 28px; text-align: center; margin-bottom: 32px; color: var(--color-text); }
+.events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+@media (max-width: 860px) {
+  .events-grid { grid-template-columns: 1fr; }
+}

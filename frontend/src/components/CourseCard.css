@@ -1,0 +1,48 @@
+.course-card {
+  position: relative;
+  min-height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.course-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,25,40,0.5), rgba(10,25,40,0) 55%);
+}
+.course-card-overlay {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 28px 20px 24px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(10,25,40,0.25);
+}
+.course-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #1E93F0;
+  color: white;
+  font-size: 22px;
+  margin: 0 auto 16px auto;
+}
+.course-card-overlay h3 {
+  font-size: 18px;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+}
+.course-card-overlay p {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}

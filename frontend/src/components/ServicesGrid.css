@@ -1,0 +1,78 @@
+.services {
+  background: var(--color-primary);
+  padding: 72px 24px;
+}
+.services h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.services-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "c1 photo c2"
+    "c3 photo c4";
+  gap: 20px;
+}
+
+.area-c1 { grid-area: c1; }
+.area-c2 { grid-area: c2; }
+.area-c3 { grid-area: c3; }
+.area-c4 { grid-area: c4; }
+
+.service-card {
+  background: #EAF4FC;
+  border-radius: 8px;
+  padding: 24px;
+}
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: #1E93F0;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.service-card h3 {
+  font-size: 16.5px;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+}
+.service-card p {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-photo {
+  grid-area: photo;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 100%;
+}
+
+@media (max-width: 860px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c1"
+      "c2"
+      "photo"
+      "c3"
+      "c4";
+  }
+  .services-photo { min-height: 220px; }
+}
