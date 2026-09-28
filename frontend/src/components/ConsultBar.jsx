@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import avatarImg from '../assets/images/consultant.png';
 import './ConsultBar.css';
 
 function ConsultBar() {
   return (
     <section className="consult-bar">
-      <button className="consult-btn">All Services</button>
+      <Link to="/services" className="consult-btn">All Services</Link>
 
       <p className="consult-text">
         Consectetur adipiscing elit sed do eiusmod tempor

@@ -1,31 +1,10 @@
-import RevealCard from "./RevealCard";
-import CourseCard from "./CourseCard";
-import { FaDna, FaChartLine, FaMicroscope } from "react-icons/fa6";
-import trainingImg1 from "../assets/images/training-1.avif";
-import trainingImg2 from "../assets/images/training-2.avif";
-import trainingImg3 from "../assets/images/training-3.jpg";
-import "./TrainingSection.css";
+import CourseCard from './CourseCard';
+import RevealCard from './RevealCard';
+import services from '../data/services';
+import './TrainingSection.css';
 
-const courses = [
-  {
-    image: trainingImg1,
-    icon: <FaDna />,
-    title: "Real-Time PCR",
-    desc: "Hands-on training in Real-Time PCR techniques and analysis.",
-  },
-  {
-    image: trainingImg2,
-    icon: <FaChartLine />,
-    title: "Sanger Sequencing",
-    desc: "Learn DNA sequencing methods using the Sanger sequencing technique.",
-  },
-  {
-    image: trainingImg3,
-    icon: <FaMicroscope />,
-    title: "Karyotyping",
-    desc: "Chromosome analysis and karyotyping training for genetic studies.",
-  },
-];
+// Homepage-e shudhu prothom 3ta, baki shob /services page-e
+const featured = services.slice(0, 3);
 
 function TrainingSection() {
   return (
@@ -37,9 +16,9 @@ function TrainingSection() {
         </p>
       </div>
       <div className="training-grid">
-        {courses.map((c, i) => (
-          <RevealCard key={c.title} index={i}>
-            <CourseCard {...c} />
+        {featured.map((s, i) => (
+          <RevealCard key={s.id} index={i}>
+            <CourseCard image={s.image} icon={<s.Icon />} title={s.title} desc={s.desc} />
           </RevealCard>
         ))}
       </div>
