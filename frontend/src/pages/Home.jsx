@@ -5,7 +5,7 @@ import CollaboratorsMarquee from '../components/CollaboratorsMarquee';
 import ServicesGrid from '../components/ServicesGrid';
 import TrainingSection from '../components/TrainingSection';
 import ConsultBar from '../components/ConsultBar';
-import ResearchSection from '../components/ResearchSection';
+// import ResearchSection from '../components/ResearchSection';
 // import WhyHgrtc from '../components/WhyHgrtc';
 import ExpertsSection from '../components/ExpertsSection';
 import EventsSection from '../components/EventsSection';
@@ -24,7 +24,7 @@ function Home() {
       <ServicesGrid />
       <TrainingSection />
       <ConsultBar />
-      <ResearchSection />
+      {/* <ResearchSection /> */}
       {/* <WhyHgrtc /> */}
       <ExpertsSection />
       <EventsSection />
