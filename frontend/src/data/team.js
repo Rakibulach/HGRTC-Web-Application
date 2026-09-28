@@ -1,16 +1,13 @@
 // Real HGRTC team data
+// category: "Admin" | "Technical" | "Guest Speaker"
 const team = [
   {
     id: 1,
     name: "Md Arifur Rahman",
-    category: "Admin", // exactly: "Admin" | "Technical" | "Guest Speaker"
-    role: "Founder & Managing Director,",
+    category: "Admin",
+    role: "Founder & Managing Director",
     photo: "/images/team/arif.png",
-    links: {
-      // jeta nei seta bad dao
-      linkedin: "https://linkedin.com/in/...",
-      facebook: "https://facebook.com/...",
-    },
+    links: {},
   },
   {
     id: 2,
@@ -46,7 +43,7 @@ const team = [
   },
   {
     id: 6,
-    name: "Md Jabedul Alam khondaker",
+    name: "Md Jabedul Alam Khondaker",
     category: "Technical",
     role: "Expert Trainer",
     photo: "/images/team/tusher.jpg",
@@ -69,7 +66,7 @@ const team = [
     links: {},
   },
   {
-    id: 8,
+    id: 9,
     name: "Nadia Comonichi",
     category: "Technical",
     role: "Research Officer",
@@ -77,7 +74,7 @@ const team = [
     links: {},
   },
   {
-    id: 9,
+    id: 10,
     name: "Md. Burhan Uddin Shourav",
     category: "Technical",
     role: "Research Officer",
@@ -85,7 +82,7 @@ const team = [
     links: {},
   },
   {
-    id: 10,
+    id: 11,
     name: "Hasimul Sayef",
     category: "Technical",
     role: "Research Associate",
@@ -93,7 +90,7 @@ const team = [
     links: {},
   },
   {
-    id: 11,
+    id: 12,
     name: "Md. Al Amin",
     category: "Technical",
     role: "Research Associate",
@@ -101,15 +98,15 @@ const team = [
     links: {},
   },
   {
-    id: 12,
-    name: "Md.Mahfuj Ahmed",
+    id: 13,
+    name: "Md. Mahfuj Ahmed",
     category: "Technical",
     role: "Chief Coordinator Officer",
     photo: "/images/team/mahfuj.webp",
     links: {},
   },
   {
-    id: 13,
+    id: 14,
     name: "Saiak Rainuma Shifa",
     category: "Technical",
     role: "Research Associate (RA)",
@@ -117,7 +114,7 @@ const team = [
     links: {},
   },
   {
-    id: 14,
+    id: 15,
     name: "Simla Alom",
     category: "Technical",
     role: "Research Associate (RA)",
@@ -125,68 +122,53 @@ const team = [
     links: {},
   },
   {
-    id: 15,
+    id: 16,
     name: "Dr. Md. Zakir Hossain Howlader",
     category: "Guest Speaker",
-    role: "Professor
-Biochemistry and Molecular Biology
-University of Dhaka",
-    photo: "/images/team/jakirsir.jpg",
+    role: "Professor Biochemistry and Molecular Biology University of Dhaka",
+    photo: "/images/team/zakirsir.jpg",
     links: {},
   },
-   {
-    id: 16,
+  {
+    id: 17,
     name: "Dr. Paul Mainwaring",
     category: "Guest Speaker",
-    role: "MBBS(Syd), MD(Lond), FRACP
-Precision Medicine Advocate",
+    role: "MBBS(Syd), MD(Lond), FRACP Precision Medicine Advocate",
     photo: "/images/team/paul.jpg",
     links: {},
   },
-   {
-    id: 17,
-    name: "Dr. Mohammad Riazul Islam",
-    category: "Guest Speaker",
-    role: "Professor
-Biochemistry and Molecular Biology
-University of Dhaka",
-    photo: "/images/team/riazsir.jpg",
-    links: {},
-  }
   {
     id: 18,
+    name: "Dr. Mohammad Riazul Islam",
+    category: "Guest Speaker",
+    role: "Professor Biochemistry and Molecular Biology University of Dhaka",
+    photo: "/images/team/riazsir.jpg",
+    links: {},
+  },
+  {
+    id: 19,
     name: "Dr. Md Shahidul Islam",
     category: "Guest Speaker",
-    role: "MBBS. MPH. PhD
-Stem Cell Biologist
-Project Director
-Establishment of National Cellular and Molecular Research Center
-Bangladesh Medical Research Council",
+    role: "MBBS. MPH. PhD Stem Cell Biologist Project Director Establishment of National Cellular and Molecular Research Center Bangladesh Medical Research Council",
     photo: "/images/team/drshahid.jpg",
     links: {},
-  }
-{
-    id: 19,
-    name: "Dr. Mohammad Sazzadul Islam",
-    category: "Guest Speaker",
-    role: "Postdoctoral Fellow
-Department of Obstetrics, Gynecology and Reproductive Science
-School of Medicine
-University of Maryland Baltimore, USA",
-    photo: "/images/team/sazzad.jpg",
-    links: {},
-  }
+  },
   {
     id: 20,
-    name: "Dr. Sadman Sakib",
+    name: "Dr. Mohammad Sazzadul Islam",
     category: "Guest Speaker",
-    role: "Dr.rer.nat(phD), Neuroscience
-The University of Gottingen
-Germany",
+    role: "Postdoctoral Fellow Department of Obstetrics, Gynecology and Reproductive Science School of Medicine University of Maryland Baltimore, USA",
     photo: "/images/team/sazzad.jpg",
     links: {},
-  }
-  // ... baki member ekhane, `id` protibar unique rekhe
+  },
+  {
+    id: 21,
+    name: "Dr. Sadman Sakib",
+    category: "Guest Speaker",
+    role: "Dr.rer.nat (PhD), Neuroscience, The University of Göttingen, Germany",
+    photo: "/images/team/sadman.webp",
+    links: {},
+  },
 ];
 
 export default team;
