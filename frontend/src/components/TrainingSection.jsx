@@ -12,8 +12,7 @@ function TrainingSection() {
       <div className="training-header">
         <h2>Let's Explore Our Training Insights</h2>
         <p className="training-subtitle">
-          Hands-on, lab-based courses in PCR, sequencing, karyotyping and more —
-          built to teach real technique, not just theory.
+          Hands-on, lab-based courses in PCR, sequencing, karyotyping and more — built to teach real technique, not just theory.
         </p>
       </div>
       <div className="training-grid">
