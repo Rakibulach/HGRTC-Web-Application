@@ -9,11 +9,7 @@ import './Navbar.css';
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Research", path: "/research" },
   { label: "Training", path: "/training" },
-  { label: "Diagnostics", path: "/diagnostics" },
-  { label: "Events", path: "/events" },
-  { label: "Resources", path: "/resources" },
   { label: "Contact", path: "/contact" },
 ];
 
