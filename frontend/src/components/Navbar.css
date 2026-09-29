@@ -224,7 +224,16 @@
 .navbar-transparent .nav-links a { color: white; }
 .navbar-transparent .hamburger { color: white; }
 .navbar-transparent .nav-actions-overlay { display: flex; align-items: center; gap: 12px; }
-.navbar-transparent .overlay-login { color: white; font-weight: 600; font-size: 13.5px; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
+.navbar-transparent .overlay-login {
+  color: white;
+  font-weight: 600;
+  font-size: 13.5px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+}
 .overlay-icon-btn {
   width: 38px; height: 38px; border-radius: 10px;
   background: rgba(255,255,255,0.16);

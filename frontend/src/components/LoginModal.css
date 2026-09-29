@@ -1,0 +1,110 @@
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #05070A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.particle-field { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.particle-dot {
+  position: absolute;
+  top: 50%; left: 50%;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation-name: particleOut;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+@keyframes particleOut {
+  0%   { transform: translate(-50%, -50%) translate(0, 0); opacity: 0; }
+  12%  { opacity: 1; }
+  75%  { opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) translate(var(--tx), var(--ty)); opacity: 0; }
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  background: var(--color-bg);
+  border-radius: 14px;
+  padding: 40px 36px 32px 36px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.login-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 34px; height: 34px; border-radius: 50%; border: none;
+  background: var(--color-surface-2); color: var(--color-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.login-close:hover { background: var(--color-border); color: var(--color-text); }
+
+.login-brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.login-brand img { height: 40px; width: auto; }
+.login-brand span { font-family: var(--font-display); font-weight: 600; font-size: 24px; color: var(--color-text); }
+
+.login-card h2 { font-family: var(--font-ui); font-weight: 700; font-size: 20px; color: var(--color-text); margin: 0 0 24px 0; }
+
+.login-form { display: flex; flex-direction: column; gap: 14px; }
+.login-form input[type="email"],
+.login-form input[type="tel"],
+.login-form input[type="password"],
+.login-form input[type="text"] {
+  width: 100%; padding: 13px 16px; border-radius: 6px;
+  border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text);
+  font-family: var(--font-ui); font-size: 14px;
+}
+.login-form input:focus { outline: none; border-color: var(--color-secondary); box-shadow: 0 0 0 3px rgba(18,137,127,0.15); }
+
+.login-password-field { position: relative; }
+.login-password-field input { padding-right: 44px; }
+.login-eye {
+  position: absolute; top: 50%; right: 12px; transform: translateY(-50%);
+  background: none; border: none; color: var(--color-muted); cursor: pointer; font-size: 15px;
+  display: flex; align-items: center;
+}
+
+.login-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin: 2px 0 6px 0; }
+.login-checkbox { display: flex; align-items: center; gap: 8px; color: var(--color-muted); cursor: pointer; }
+.login-checkbox input { accent-color: var(--color-secondary); }
+.login-forgot { color: var(--color-secondary); text-decoration: underline; font-weight: 500; }
+
+.login-submit {
+  background: var(--color-primary); color: white; border: none; padding: 13px; border-radius: 6px;
+  font-weight: 700; font-size: 14.5px; cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.login-submit:hover { background: var(--color-secondary); transform: translateY(-1px); }
+
+.login-divider { display: flex; align-items: center; gap: 14px; margin: 26px 0 20px 0; color: var(--color-muted); font-size: 12.5px; }
+.login-divider::before, .login-divider::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+
+.login-socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 22px; }
+.social {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 14px; text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.social:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.social.facebook { background: #1877F2; }
+.social.twitter { background: #14171A; }
+.social.google { background: #EA4335; }
+.social.linkedin { background: #0A66C2; }
+.social.pinterest { background: #E60023; }
+
+.login-register { text-align: center; font-size: 13px; color: var(--color-muted); margin: 0; }
+.login-register a { color: var(--color-secondary); font-weight: 600; text-decoration: underline; }
+
+@media (max-width: 520px) {
+  .login-card { padding: 32px 22px 26px 22px; }
+}
