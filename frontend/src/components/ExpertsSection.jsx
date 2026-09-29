@@ -48,7 +48,8 @@ function ExpertsSection() {
       <span className="experts-eyebrow">Our Team</span>
       <h2>Meet Our Members</h2>
       <p className="experts-subtitle">
-        Placeholder subtitle — real intro text HGRTC theke asle boshanor.
+        The people behind HGRTC's research and training — leadership, faculty
+        trainers, researchers, and the guest speakers who join our sessions.
       </p>
 
       <div className="experts-tabs">
