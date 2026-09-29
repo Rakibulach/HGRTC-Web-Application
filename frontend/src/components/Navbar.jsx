@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa6';
+import { FaArrowRight, FaArrowRightFromBracket } from 'react-icons/fa6';
 import logo from '../assets/images/logo.png';
 import LoginModal from './LoginModal';
+import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 
 const navLinks = [
@@ -41,6 +42,13 @@ function WaveText({ text, baseDelay = 0 }) {
 function Navbar({ transparent = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    logout();
+    navigate('/');
+  }
 
   return (
     <>
@@ -69,13 +77,31 @@ function Navbar({ transparent = false }) {
 
         {transparent ? (
           <div className="nav-actions-overlay">
-            <button className="overlay-login" onClick={() => setLoginOpen(true)}>Login</button>
-            <button className="overlay-icon-btn" onClick={() => setLoginOpen(true)}><FaArrowRight /></button>
+            {user ? (
+              <>
+                <Link to="/dashboard" className="overlay-login">Hi, {user.name}</Link>
+                <button className="overlay-icon-btn" onClick={handleLogout}><FaArrowRightFromBracket /></button>
+              </>
+            ) : (
+              <>
+                <button className="overlay-login" onClick={() => setLoginOpen(true)}>Login</button>
+                <button className="overlay-icon-btn" onClick={() => setLoginOpen(true)}><FaArrowRight /></button>
+              </>
+            )}
           </div>
         ) : (
           <div className="nav-actions">
-            <button className="btn-ghost" onClick={() => setLoginOpen(true)}>Login</button>
-            <button className="btn-primary">Explore Training</button>
+            {user ? (
+              <>
+                <Link to="/dashboard" className="btn-ghost">Hi, {user.name}</Link>
+                <button className="btn-primary" onClick={handleLogout}>Logout</button>
+              </>
+            ) : (
+              <>
+                <button className="btn-ghost" onClick={() => setLoginOpen(true)}>Login</button>
+                <button className="btn-primary">Explore Training</button>
+              </>
+            )}
           </div>
         )}
       </nav>

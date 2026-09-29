@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaXmark, FaEye, FaEyeSlash, FaFacebookF, FaXTwitter, FaGoogle, FaLinkedinIn, FaPinterestP } from 'react-icons/fa6';
 import logo from '../assets/images/logo.png';
+import { useAuth } from '../context/AuthContext';
 import './LoginModal.css';
 
-// Center theke random dik-e chhoriye pora dot-gulor position — ekbar-i generate hoy (mount-e)
 function ParticleField() {
   const [dots] = useState(() =>
     Array.from({ length: 55 }, (_, i) => {
@@ -42,23 +43,18 @@ function ParticleField() {
 
 function LoginModal({ isOpen, onClose }) {
   const [showPassword, setShowPassword] = useState(false);
-
-  // Modal khola obosthay background scroll bondho
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
-
-  // Esc chapleo close hobe
-  useEffect(() => {
-    function handleKey(e) {
-      if (e.key === 'Escape') onClose();
-    }
-    if (isOpen) window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [isOpen, onClose]);
+  const [email, setEmail] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(email);
+    onClose();
+    navigate('/dashboard');
+  }
 
   return (
     <div className="login-overlay" onClick={onClose}>
@@ -74,8 +70,14 @@ function LoginModal({ isOpen, onClose }) {
 
         <h2>Login into your account</h2>
 
-        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
-          <input type="email" placeholder="Email" required />
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <input type="tel" placeholder="Mobile Number" required />
           <div className="login-password-field">
             <input type={showPassword ? "text" : "password"} placeholder="Password" required />

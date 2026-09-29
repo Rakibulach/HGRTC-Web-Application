@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import RequireAuth from './components/RequireAuth';
 import Home from './pages/Home';
 import About from './pages/About';
 import Research from './pages/Research';
@@ -13,6 +15,7 @@ import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import BlogDetail from './pages/BlogDetail';
 import AllServices from './pages/AllServices';
+import StudentDashboard from './pages/StudentDashboard';
 
 function App() {
   useEffect(() => {
@@ -20,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <AuthProvider>
       <ScrollToTop />
       <Header />
       <Routes>
@@ -34,9 +37,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/services" element={<AllServices />} />
+        <Route path="/dashboard" element={<RequireAuth><StudentDashboard /></RequireAuth>} />
       </Routes>
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 

@@ -6,6 +6,10 @@
   --color-text: #14232F;
   --color-muted: #5B7184;
   --color-border: #DCE6E2;
+  --color-surface: #FFFFFF;
+--color-surface-2: #EFF3F2;
+--color-danger: #C24444;
+--color-success: #1E9E6B;
   --color-accent: #B87A24; /* Amber Flag */
   --font-display: 'Newsreader', serif;
   --font-ui: 'IBM Plex Sans', sans-serif;
