@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { FaMagnifyingGlass, FaXmark, FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import './GallerySection.css';
 
-// Ei folder-er shob image automatically import hoy — notun image add korle
-// code change lagbe na, shudhu file-ta oi folder-e rakhle-i gallery-te dekhabe
 const modules = import.meta.glob('../assets/images/gallery/*.{jpg,jpeg,png,webp}', { eager: true });
 const galleryImages = Object.keys(modules)
   .sort()
@@ -11,8 +9,8 @@ const galleryImages = Object.keys(modules)
 
 function GallerySection() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const extended = [...galleryImages, ...galleryImages]; // seamless loop-er jonno duibar
 
-  // Lightbox khola obosthay background scroll bondho rakhi
   useEffect(() => {
     document.body.style.overflow = activeIndex !== null ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -35,15 +33,21 @@ function GallerySection() {
         Placeholder subtitle — real intro text HGRTC theke asle boshanor.
       </p>
 
-      <div className="gallery-grid">
-        {galleryImages.map((src, i) => (
-          <div className="gallery-item" key={i} onClick={() => setActiveIndex(i)}>
-            <img src={src} alt={`Gallery photo ${i + 1}`} />
-            <div className="gallery-hover">
-              <FaMagnifyingGlass />
+      <div className="gallery-viewport">
+        <div className="gallery-track">
+          {extended.map((src, i) => (
+            <div
+              className="gallery-item"
+              key={i}
+              onClick={() => setActiveIndex(i % galleryImages.length)}
+            >
+              <img src={src} alt={`Gallery photo ${(i % galleryImages.length) + 1}`} />
+              <div className="gallery-hover">
+                <FaMagnifyingGlass />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {activeIndex !== null && (
