@@ -30,8 +30,9 @@ function GallerySection() {
       <span className="gallery-eyebrow">Gallery</span>
       <h2>Training Moments</h2>
       <p className="gallery-subtitle">
-        Placeholder subtitle — real intro text HGRTC theke asle boshanor.
-      </p>
+  A look inside HGRTC's labs and training sessions — moments from the
+  hands-on work our students and researchers do every day.
+</p>
 
       <div className="gallery-viewport">
         <div className="gallery-track">
