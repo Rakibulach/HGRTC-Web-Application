@@ -13,8 +13,9 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: gallerySlide 28s linear infinite;
+  animation: gallerySlide 55s linear infinite;
 }
+
 .gallery-track:hover { animation-play-state: paused; }
 
 .gallery-item {
