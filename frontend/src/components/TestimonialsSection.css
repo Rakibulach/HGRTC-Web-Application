@@ -43,6 +43,8 @@
   background-image: radial-gradient(rgba(14,42,71,0.05) 1px, transparent 1px);
   background-size: 14px 14px;
   padding: 36px 32px 56px 32px;
+  height: 280px;
+  overflow: hidden;
 }
 .testi-quote-icon {
   display: inline-flex;
@@ -57,6 +59,11 @@
   line-height: 1.7;
   color: #4A5C68;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .testi-card-bottom {
   background: white;
