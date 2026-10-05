@@ -72,7 +72,7 @@ function Navbar({ transparent = false }) {
         </div>
 
         {transparent ? (
-          <div className="nav-actions-overlay">
+          <div className={`nav-actions-overlay ${isOpen ? "nav-actions-open" : ""}`}>
             {user ? (
               <>
                 <Link to="/dashboard" className="overlay-login">Hi, {user.name}</Link>
@@ -86,7 +86,7 @@ function Navbar({ transparent = false }) {
             )}
           </div>
         ) : (
-          <div className="nav-actions">
+          <div className={`nav-actions ${isOpen ? "nav-actions-open" : ""}`}>
             {user ? (
               <>
                 <Link to="/dashboard" className="btn-ghost">Hi, {user.name}</Link>

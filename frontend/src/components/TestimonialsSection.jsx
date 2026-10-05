@@ -1,14 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaQuoteLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import testimonials from '../data/testimonials';
 import './TestimonialsSection.css';
 
-const SLOT_STEP = 484; // card width (460px) + gap (24px)
-
 function TestimonialsSection() {
   const extended = [...testimonials, ...testimonials, ...testimonials];
-  const [index, setIndex] = useState(testimonials.length); // majher copy theke shuru
+  const [index, setIndex] = useState(testimonials.length);
   const [smooth, setSmooth] = useState(true);
+  const trackRef = useRef(null);
+  const [slotStep, setSlotStep] = useState(484);
+
+  // Card-er actual width (+gap) measure kori browser theke — hardcoded number na,
+  // tai CSS-e card choto/boro hole (mobile/desktop) JS nijei thik hoye jay
+  useEffect(() => {
+    function measure() {
+      const track = trackRef.current;
+      if (!track || track.children.length < 2) return;
+      const first = track.children[0].getBoundingClientRect();
+      const second = track.children[1].getBoundingClientRect();
+      setSlotStep(second.left - first.left);
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
 
   function next() {
     setIndex((i) => i + 1);
@@ -17,7 +32,6 @@ function TestimonialsSection() {
     setIndex((i) => i - 1);
   }
 
-  // shesh/shuru-e pouchale, invisible-vabe majher copy-te "teleport" (infinite loop illusion)
   useEffect(() => {
     if (index >= testimonials.length * 2 || index < testimonials.length) {
       const resetTimer = setTimeout(() => {
@@ -43,9 +57,10 @@ function TestimonialsSection() {
 
       <div className="testi-viewport">
         <div
+          ref={trackRef}
           className="testi-track"
           style={{
-            transform: `translateX(-${index * SLOT_STEP}px)`,
+            transform: `translateX(-${index * slotStep}px)`,
             transition: smooth ? "transform 0.5s ease" : "none",
           }}
         >

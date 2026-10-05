@@ -128,6 +128,13 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 860px) {
+  .testi-viewport { max-width: 100%; }
+}
+
 @media (max-width: 640px) {
+  .testi-track { gap: 16px; }
   .testi-card { flex: 0 0 85vw; }
+  .testi-card-top { padding: 28px 24px 48px 24px; height: 260px; }
+  .testi-card-bottom { height: 150px; }
 }

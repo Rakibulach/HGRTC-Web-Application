@@ -118,4 +118,22 @@
     border-radius: 10px;
     margin-top: 8px;
   }
+
+  /* Login/action button-o hamburger khola obosthay-i dekhabe, bondho thakle lukano */
+  .nav-actions,
+  .nav-actions-overlay { display: none; }
+  .nav-actions-open {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .nav-actions.nav-actions-open { gap: 12px; flex-wrap: wrap; }
+  .navbar-transparent .nav-actions-overlay.nav-actions-open {
+    background: rgba(10, 32, 56, 0.92);
+    backdrop-filter: blur(14px);
+    padding: 14px;
+    border-radius: 10px;
+    gap: 16px;
+  }
 }
