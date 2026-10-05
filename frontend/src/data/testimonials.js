@@ -15,7 +15,7 @@ const testimonials = [
     name: "Jannatul Afrozah",
     role: "Dept. of Pharmacy · Brac University",
     quote: "Recently I participated in a hands-on training on Karyotyping run by HGRTC. It was so amazing from the very beginning till the end. Both the theory class and lab classes were informative and educative. The attracting part was we learnt the process using an artificial intelligence (AI) machine. We were taught the hands-on process so specifically that it made us confident. The host Arif vai and trainer Shoshi Apu were very helpful and empathetic. I'm really grateful to HGRTC for such an initiative. I think, for being skilled and having knowledge for both academic and future career, students like me can come forward to attend the training sessions.",
-    photo: "/images/testimonials/partho.jpg",
+    photo: "/images/testimonials/jannatul.png",
   },
   {
     name: "Dr. Md. Jakir Hossain, PhD",
@@ -27,7 +27,7 @@ const testimonials = [
     name: "Dr. Md. Abdullah Al Mamun",
     role: "MBBS, M.Phil · Biochemistry & Molecular Biology, DU",
     quote: "The training is completely based on hands-on activities and will ensure an opportunity to reveal the molecular biology through practical sessions.",
-    photo: "/images/testimonials/abdullah-al-mamun/png",
+    photo: "/images/testimonials/abdullah-al-mamun.png",
   },
   {
     name: "Anwan Hossain",
