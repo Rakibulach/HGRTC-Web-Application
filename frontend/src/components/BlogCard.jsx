@@ -4,7 +4,7 @@ import './BlogCard.css';
 function BlogCard({ id, image, date, title, excerpt }) {
   return (
     <div className="blog-card">
-      <img src={image} alt={title} className="blog-card-img" />
+      <img src={image} alt={title} className="blog-card-img" loading="lazy" />
       <div className="blog-card-body">
         <span className="blog-date">{date}</span>
         <h3><Link to={`/blog/${id}`}>{title}</Link></h3>

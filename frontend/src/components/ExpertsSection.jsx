@@ -68,7 +68,7 @@ function ExpertsSection() {
         {visible.map((m) => (
           <div className="expert-card" key={m.id}>
             <div className="expert-photo-wrap">
-              <img src={m.photo} alt={m.name} className="expert-photo" />
+              <img src={m.photo} alt={m.name} className="expert-photo" loading="lazy" />
             </div>
             <h3>{m.name}</h3>
             <span className="expert-badge">{m.role}</span>

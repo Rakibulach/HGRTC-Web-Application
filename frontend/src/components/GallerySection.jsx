@@ -42,7 +42,7 @@ function GallerySection() {
               key={i}
               onClick={() => setActiveIndex(i % galleryImages.length)}
             >
-              <img src={src} alt={`Gallery photo ${(i % galleryImages.length) + 1}`} />
+             <img src={src} alt={`Gallery photo ${(i % galleryImages.length) + 1}`} loading="lazy" />
               <div className="gallery-hover">
                 <FaMagnifyingGlass />
               </div>

@@ -49,8 +49,8 @@ function BlogDetail() {
 
           <div className="blog-gallery">
             {blog.gallery.map((img, i) => (
-              <img src={img} alt="" key={i} />
-            ))}
+  <img src={img} alt="" loading="lazy" key={i} />
+))}
           </div>
           <div className="blog-dots">
             {blog.gallery.map((_, i) => (

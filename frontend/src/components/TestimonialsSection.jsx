@@ -71,7 +71,7 @@ function TestimonialsSection() {
                 <p>{t.quote}</p>
               </div>
               <div className="testi-card-bottom">
-                <img src={t.photo} alt={t.name} className="testi-avatar" />
+                <img src={t.photo} alt={t.name} className="testi-avatar" loading="lazy" />
                 <h3>{t.name}</h3>
                 <span className="testi-role">{t.role}</span>
               </div>
